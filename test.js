@@ -20,9 +20,18 @@ test("One euro should be 1.07 dollars", function () {
 })
 
 test('One dollar should be around 146.26 yen', () => {
-    expect(fromDollarToYen(1)).toBeCloseTo(146.26)
+
+    const yen = fromDollarToYen(10);
+
+    const expected = (10/1.07) * 156.5
+
+    expect(yen).toBe(expected)
 })
 
 test('One pound should be around 179.88 yens', () => {
-    expect(fromYenToPound(359.76)).toBeCloseTo(2)
+
+    const pound = fromYenToPound(10);
+
+    const expected = (10/156.5) * 0.87
+    expect(pound).toBe(expected)
 })
